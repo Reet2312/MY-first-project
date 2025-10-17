@@ -1,7 +1,4 @@
-1. Lists & loops
-2. Functions
-3. Basic file handling
-4. Conditional logic
+
 
 def calculate_average(scores):
     return sum(scores) / len(scores)
@@ -50,5 +47,6 @@ if __name__ == "__main__":
 
     
         
+
 
 
