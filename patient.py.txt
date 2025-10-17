@@ -1,0 +1,41 @@
+Patient list
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple Patient List</title>
+</head>
+<body>
+    <h1>Patient List</h1>
+
+    <input type="text" id="name" placeholder="Patient Name">
+    <button onclick="addPatient()">Add Patient</button>
+
+    <ul id="patientList"></ul>
+
+    <script>
+        let patients = [];
+
+        function addPatient() {
+            const name = document.getElementById("name").value.trim();
+            if(name === "") {
+                alert("Enter a patient name!");
+                return;
+            }
+            patients.push(name);
+            updateList();
+            document.getElementById("name").value = "";
+        }
+
+        function updateList() {
+            const ul = document.getElementById("patientList");
+            ul.innerHTML = "";
+            for(let i=0; i<patients.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = patients[i];
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
