@@ -1,0 +1,62 @@
+HOSPITAL MANAGEMENT SYSTEM
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Patient {
+    String name;
+    int age;
+    String disease;
+
+    Patient(String name, int age, String disease) {
+        this.name = name;
+        this.age = age;
+        this.disease = disease;
+    }
+
+    void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age + ", Disease: " + disease);
+    }
+}
+
+class Doctor {
+    String name;
+    String specialization;
+
+    Doctor(String name, String specialization) {
+        this.name = name;
+        this.specialization = specialization;
+    }
+
+    void displayInfo() {
+        System.out.println("Dr. " + name + " (" + specialization + ")");
+    }
+}
+
+class Hospital {
+    ArrayList<Patient> patients = new ArrayList<>();
+    ArrayList<Doctor> doctors = new ArrayList<>();
+
+    void addPatient(Patient p) {
+        patients.add(p);
+        System.out.println("Patient added: " + p.name);
+    }
+
+    void addDoctor(Doctor d) {
+        doctors.add(d);
+        System.out.println("Doctor added: " + d.name);
+    }
+
+    void listPatients() {
+        System.out.println("\n--- Patients ---");
+        if(patients.isEmpty()) {
+            System.out.println("No patients yet.");
+        }
+        for(Patient p : patients) {
+            p.displayInfo();
+        }
+    }
+
+    void listDoctors() {
+        System.out.println("\n--- Doctors ---");
+        if(doctors.isEmpty()) {
+            System.out.println("No doctors yet.")
