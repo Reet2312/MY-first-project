@@ -1,4 +1,4 @@
-HOSPITAL MANAGEMENT SYSTEM
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -60,3 +60,4 @@ class Hospital {
         System.out.println("\n--- Doctors ---");
         if(doctors.isEmpty()) {
             System.out.println("No doctors yet.")
+
