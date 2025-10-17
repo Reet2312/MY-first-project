@@ -1,0 +1,54 @@
+1. Lists & loops
+2. Functions
+3. Basic file handling
+4. Conditional logic
+
+def calculate_average(scores):
+    return sum(scores) / len(scores)
+
+def assign_grade(avg):
+    if avg >= 90:
+        return "A"
+    elif avg >= 80:
+        return "B"
+    elif avg >= 70:
+        return "C"
+    elif avg >= 60:
+        return "D"
+    else:
+        return "F"
+
+def main():
+    students = {
+        "Alice": [95, 88, 92],
+        "Bob": [72, 65, 70],
+        "Charlie": [85, 90, 87],
+        "Diana": [58, 60, 62]
+    }
+
+    print("Student Grades:\n")
+    for name, scores in students.items():
+        avg = calculate_average(scores)
+        grade = assign_grade(avg)
+        print(f"{name}: Average = {avg:.2f}, Grade = {grade}")
+
+    # Save results to file
+    with open("student_grades.txt", "w") as file:
+        for name, scores in students.items():
+            avg = calculate_average(scores)
+            grade = assign_grade(avg)
+            file.write(f"{name}: Average = {avg:.2f}, Grade = {grade}\n")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+    
+
+    
+        
+
+
